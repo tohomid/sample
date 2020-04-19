@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<!-- 文字コード！-->
+<meta charset="utf-8">
+
+<!-- ブラウザで表示されるタイトル !-->
+<title>
+	<!-- タイトルを記入 -->
+	ホームメイドパンの優しい味
+</title>
+
+<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1">
+
+
+<!-- SEO対策に必要な記述。サーバーアップしたら必ず記述しましょう。
+<meta name="description" content="" />
+<meta name="keywords" content="" /> -->
+
+	<!-- スタイルシート -->
+	<link rel="stylesheet" href="reset.min.css" media="all">
+	<link rel="stylesheet" href="style.css" media="all">
+
+<!-- slickのCSSを読み込む -->
+<link rel="stylesheet" href="slick/slick.css" media="all">
+<link rel="stylesheet" href="slick/slick-theme.css" media="all">
+
+<!-- jQuery/slickを読み込む  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="slick/slick.min.js"></script>
+
+<script type="text/javascript">
+	// 1.簡単なスライダー
+	$(function() {
+  //ここにSlickのjQueryを記述
+	  $('.autoplay').slick({
+	    slidesToShow: 6,
+	    slidesToScroll: 1,
+	    autoplay: true,
+	    autoplaySpeed: 1000,
+	    arrows: false,
+	  });
+	
+    var pagetop = $('#page_top');   
+    pagetop.hide();
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {  //100pxスクロールしたら表示
+            pagetop.fadeIn();
+        } else {
+            pagetop.fadeOut();
+        }
+    });
+	$('a[href^="#"]').click(function(){
+	var time = 500;
+	var href= $(this).attr("href");
+	var target = $(href == "#" ? 'html' : href);
+	var distance = target.offset().top;
+	$("html, body").animate({scrollTop:distance}, time, "swing");
+	    return false;
+	  });
+
+	$('.navigation a[href]').on('click', function(event) {
+  	$('#nav-input').trigger('click');
+		});
+	});
+
+</script>
+
+  <!-- ここでFont Awesomeを読み込み -->
+<script src="https://kit.fontawesome.com/d512f49684.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<!-- コンテンツ部分のコードを記入していく -->
+	<div class="wrap">
+		<header>
+			<div id="nav-drawer">
+	      		<input id="nav-input" type="checkbox" class="nav-unshown">
+	      		<label id="nav-open" for="nav-input"><span></span>
+	      		</label>
+	      		<label class="nav-unshown" id="nav-close" for="nav-input">
+	      		</label>
+	      		<div id="nav-content">
+	      			<ul class="navigation">
+	      				<li>
+							<a href="#concept">concept
+							</a>
+						</li>
+						<li>
+							<a href="#contents1-3">menu
+							</a>
+						</li>
+						<li>
+							<a href="#contents1-3">gift
+							</a>
+						</li>
+						<li>
+							<a href="#contents1-3">delivery
+							</a>
+						</li>
+						<li>
+							<a href="#contact">contact
+							</a>
+						</li>
+					</ul>
+	      		</div>
+	  		</div>
+			<div class="wrapper">
+		  		
+				<div class="header-inner">
+				<h1 class="logo">
+					<img src="images/Maison de forèt.png" alt="">
+				</h1>
+				</div>
+			</div>
+		</header>
+
+		<div class="main-image">
+		</div>
+
+		<div class="concept-wrapper">
+			<div id="concept">
+				<h2>concept
+				</h2>
+				<div class="c-text1">
+					<img src="images/c-text1.png" alt="">
+				</div>
+				<div class="c-text2">
+					<p>小麦粉・砂糖・バター・菜種油・卵・塩など味の基本となるものは全て国産を、</p>
+					<p>その他の食材もなるべく安心安全なものを選んでいます。​</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="content-wrapper">
+			<div id="menu">
+				<h2>menu</h2>
+			</div>
+			<ul class="contents1">
+				<li>
+					<a href="#">
+						<img src="images/bake.png" alt="">
+							<a>bake</a>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/cookies.png" alt="">
+							<a>cookie</a>
+					</a>
+				</li>
+				<li>
+					<a href="#/">
+						<img src="images/cake.png" alt="">
+							<a>cake</a>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="btn-wrapper">
+			<a href="#" class="btn menu list">menu list</a>
+			<a href="#" class="btn onlineshop">online shop</a>
+		</div>
+
+	     <ul id="contents1-3">
+			<li>
+				<a href="#">gift</a>
+			</li>
+			<li>
+				<a href="#">delivery</a>
+			</li>
+			<li>
+				<a href="#">contact</a>
+			</li>
+		</ul>
+		<div class="contents2">
+			<div class="f-contents2">
+				<div class="contents2-b">
+					<h3>news</h3>
+					<div class="text-contents news">
+						<ul>
+						<li>
+							<span class="fas fa-newspaper"></span>
+							  Webマガジン「fooder」で紹介されました (2020.4.1) 
+						</li>
+						<li>
+							<span class="fas fa-leaf"></span>
+							  新商品「マフィン」を発売しました (2020.3.25) 
+						</li>
+						<li>
+							<span class="fas fa-leaf"></span>
+							  新商品「シフォンケーキ」を発売しました (2020.2.25) 
+						</li>
+						</ul>
+					</div>
+				</div>
+				<div class="contents2-b shop">
+					<h3>shop</h3>
+					<div class="text-contents">
+						<ul>
+						<li>
+							<span class="fas fa-store"></span>
+							  ○○新宿店「××」グローサリーで限定販売中 (〜2020.6末まで)
+						</li>
+						<li>
+							<span class="fas fa-store"></span>
+							  ○○名古屋店「××」グローサリーで限定販売中 (〜2020.4末まで)
+						</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="instagram">
+			<h2>Instagram</h2>
+			<div class="autoplay">
+				<img src="images/instagram-photo1.png" alt="">
+				<img src="images/instagram-photo2.png" alt="">
+				<img src="images/instagram-photo3.png" alt="">
+				<img src="images/instagram-photo4.png" alt="">
+				<img src="images/instagram-photo5.png" alt="">
+				<img src="images/instagram-photo6.png" alt="">
+				<img src="images/instagram-photo7.png" alt="">
+				<img src="images/instagram-photo8.png" alt="">
+				<img src="images/instagram-photo9.png" alt="">
+				<img src="images/instagram-photo10.png" alt="">
+			</div>
+			<img class="sp left" src="images/instagram-photo2.png" alt="">
+			<img class="sp right" src="images/instagram-photo4.png" alt="">
+		</div>
+
+		<div id="page_top"><a href="#"></a></div>
+
+
+		<footer>
+			<ul class="sns">
+				<li>
+					<a href="#">
+						<img src="images/Gradient.png" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="#/">
+						<img src="images/f_logo_RGB-White_72.png" alt="">
+					</a>
+				</li>
+			</ul>
+			<div class="footer-inner">
+				<h1 class="emblem">
+					<img src="images/©️Maison de forèt all rights reserved.png" alt="">
+				</h1>
+			</div>
+		</footer>
+	</div>
+
+
+</body>
+</html>
+
