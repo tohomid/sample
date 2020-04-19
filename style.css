@@ -1,0 +1,852 @@
+@charset UTF-8;
+/* ================================================ */
+/*               全体設定                */
+/* ================================================ */
+
+body {
+	font-family:'Papyrus',"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif, Verdana, "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+}
+
+.wrap {
+  overflow: hidden;
+}
+/* ================================================ */
+/*ヘッダー：など場所をこまめに書く！*/
+/* ================================================ */
+header {
+  padding:10px;
+  background: #e5dad4;
+}
+
+.wrapper {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.header-inner {
+  position: relative;
+  top: -15px;
+}
+
+#nav-drawer {
+  position: relative;
+  top: 30px;
+  left: 30px;
+}
+
+.nav-unshown {
+  display:none;
+}
+
+#nav-open {
+  display: inline-block;
+  width: 25px;
+  height: 22px;
+  padding: 10px;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1000;
+}
+
+#nav-open span, #nav-open span:before, #nav-open span:after {
+  position: absolute;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: #565455;
+  display: block;
+  content: '';
+  cursor: pointer;
+}
+#nav-open span:before {
+  bottom: -8px;
+}
+#nav-open span:after {
+  bottom: -16px;
+}
+
+#nav-close {
+  display: none;/*はじめは隠しておく*/
+  position: fixed;
+  z-index: 99;
+  top: 0;/*全体に広がるように*/
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+#nav-content {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 90%;
+  max-width: 250px;
+  height: 100%;
+  background-color: rgba(255,255,255,0.8);
+  transition: .3s ease-in-out;
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);
+}
+
+#nav-input:checked ~ #nav-close {
+  display: block;
+  opacity: .5;
+}
+
+#nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+
+#nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+#nav-input:checked ~ label {
+  -webkit-transform: translateX(250px);
+          transform: translateX(250px);
+}
+
+#nav-input:checked ~ #nav-open {
+  background-color: #fff;
+  opacity: 0.6;
+}
+
+#nav-content :checked ~ #nav-close {
+  display: block;
+  opacity: .5;
+}
+
+.navigation li {
+    position: relative;  
+    height: 100px;
+}
+
+.navigation li a {
+    display: block;
+    font-size: 30px;
+    text-decoration: none;
+    text-align: center;
+    line-height:100px;
+    font-style: italic;
+    color: #F66E5D;
+}
+
+.navigation :hover {
+      color: #fff;
+      background-color: #F66E5D;
+      opacity: 0.8;
+}
+
+
+
+/* ================================================ */
+/*メインコンテンツ*/
+/* ================================================ */
+
+.main-image { 
+    height: 550px;
+    background-image: url(images/main-photo.png);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    vertical-align: bottom;
+}
+
+
+
+.concept-wrapper {
+  height: 450px;
+  background-image: url(images/sp-con-bg.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-position-y: 140px;
+}
+
+#concept {
+  height: 350px;
+  background-color: #e5dad4;
+  padding-top: 10px;
+  z-index: -1;
+  position: relative;
+}
+
+
+#concept h2 {
+  color: #F66E5D;
+  height: 40px;
+  margin: 0 auto;
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 30pt;
+}
+
+.c-text1 {
+    width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 65px;
+}
+
+.c-text2 {
+    width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.c-text2 p {
+    color: #565455;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+
+.content-wapper {
+    height: 1000px;
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#menu {
+    margin: 0 auto;
+    margin-top: 100px; 
+    font-size: 30pt;
+    color: #F66E5D;
+    text-align: center;
+}
+
+.contents1 {
+    width: 1000px;
+    margin: 0 auto;
+    height: 320px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contents1 li {
+  border-radius: 50%;
+  transition: all 0.6s ease 0s;
+}
+.contents1 li:hover {
+  cursor: pointer;
+  transform: scale(1.1, 1.1);
+}
+
+.contents1 li a{
+  color: #565455;
+  font-size: 20px;
+  display: block;
+  text-align: center;
+}
+
+
+
+.btn-wrapper {
+    inline-size: max-content;
+    height: 200px;
+    text-align: center;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+.btn {
+    margin: 40px 0px;
+    display: block;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    height: 75px;
+    width: 600px;
+    padding: 2px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #F66E5D;
+    position: relative;
+    box-shadow: 0 7px 0 #cd4a3b;
+    line-height: 75px;
+    font-size: 40px;    
+}
+
+.btn:active {
+    position: relative;
+    top: 7px;
+    box-shadow: none;
+}
+
+.btn:hover {
+    opacity: 0.6;
+}
+
+
+ul#contents1-3 {
+    height: 100px;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 30px;
+    color: #F66E5D;
+    padding-top: 50px;
+    padding-bottom: 100px; 
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+ul#contents1-3 li a {
+    width: 200px;
+    display: block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #F66E5D;
+    border: dashed 2px #F66E5D;
+    border-radius: 8px;
+    transition: .4s;
+}
+
+ul#contents1-3 li a:hover {
+    border: dashed 2px #fff;
+    color: #ffff;
+    background-color: #F66E5D;
+    opacity: 0.7;
+}
+
+.contents2 {
+    width: 100%;
+    height: 500px;
+    background-image: url(images/sp-c2-bg.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 15%;
+    text-align: center;
+    position: relative;
+}
+
+.f-contents2 {
+    width: 63%;
+    height: 60%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 50px 18% 50px 50px;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    background-color: #e5dad4;
+    z-index: -1;
+}
+
+.contents2-b {
+    width: 50%;
+}
+.text-contents {
+    margin: 0px 10px;
+}
+
+.contents2-b h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: #F66E5D;
+}
+
+.text-contents {
+    height: 180px;
+    margin-top: 20px;
+    padding: 30px;
+    border: dashed 2px #F66E5D;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.text-contents li {
+    float: left;
+    font-size: 15px;
+    color: #565455;
+    list-style: none;
+    padding-bottom: 8px;
+}
+
+.fas li::before {
+  font-family: FontAwesome 5 Free;
+  content: '\f1ea','\f54e','\f06c'; /* アイコンのunicode */
+  color: #565455;
+}
+
+.instagram {
+    padding: 30px 0px;
+    height: 300px;
+}
+
+.slick-slider {
+    height: 100%;
+}
+.instagram h2 {
+    font-size: 30px;
+    color:#F66E5D;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.autoplay {
+    margin: 0 auto;
+    text-align: center;
+}
+.slick-list {
+    height: 100%;
+}
+
+.sp {
+  visibility: hidden;
+}
+
+#page_top{
+  width: 90px;
+  height: 90px;
+  position: fixed;
+  right: 0;
+  bottom: 50px;
+  opacity: 0.6;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 90px;
+  height: 90px;
+  text-decoration: none;
+}
+#page_top a::before{
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 30px solid #F66E5D;
+  font-size: 25px;
+  color: #F66E5D;
+  position: absolute;
+  top: -40px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+#page_top a::after{
+  content: 'top';
+  font-size: 20px;
+  color: #fff;
+  position: absolute;
+  top: 45px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  text-align: center;
+  color: #F66E5D;
+  font-weight: bolder;
+}
+
+
+footer {
+    height: 250px;
+    background-color: #e5dad4;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.sns {
+    margin: 0 auto;
+    height: 70px;
+    align-items: center;
+    text-align: center;
+}
+
+.sns li {
+    display: inline-block;
+    border-radius: 50%;
+    transition: all 0.6s ease 0s;
+    line-height: 70px;
+    text-align: center;
+    padding: 0px 10px;
+}
+
+.sns li:hover {
+    cursor: pointer;
+    transform: scale(1.1, 1.1);
+}
+
+.sns li a img {
+    width: 70px;
+}
+
+.footer-inner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+
+
+/*================================================
+Tablet : 画面の横幅が768pxまで
+==================================================*/
+@media screen and (max-width: 768px){
+
+/*=============================*/
+/*メインビジュアル部分*/
+/* ============================*/
+
+header {
+  height: 60px;
+}
+
+.wrapper {
+  position: relative;
+  top: -30px;
+}
+
+.header-inner {
+  position: absolute;
+  top: 10px;
+}
+
+#nav-drawer {
+  position: relative;
+  top: 20px;
+  left: 20px;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo img {
+ width: 70%;
+}
+
+
+.main-image { 
+    height: 500px;
+}
+
+#concept {
+  height: 300px;
+  background-image: ur(images/sp-con-bg.png);
+  background-color: #e5dad4;
+  background-position: left;
+  background-position-y: bottom;
+  background-size: 95%;
+  padding-top: 10px;
+}
+
+
+#concept h2 {
+  width: 100%;
+  height: 30px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 20pt;
+  padding: 10px 0px;
+}
+
+#concept img{
+    width: 85%;
+}
+
+.c-text1 {
+    width: 100%; 
+    padding-top: 20px;
+    padding-bottom: 45px;
+}
+
+.c-text2 {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 15px 0px;
+}
+
+.c-text2 p {
+  font-size: 12px;
+}
+
+.content-wapper {
+    height: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-image: url(images/sp-con-bg.png);
+    background-repeat: no-repeat;
+}
+
+.menu {
+    margin: 0 auto;
+    font-size: 30pt;
+}
+
+.contents1 {
+    width: 100%;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+}
+
+.contents1 li {
+   padding: 20px 10px; 
+}
+
+.btn-wrapper {
+    width: 80%; 
+    font-size: 25%;
+    height: 200px;
+}
+
+.btn {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 40px; 
+}
+
+ul#contents1-3 {
+    height: 250px;
+    display: block;
+    width: 100%;
+}
+
+ul#contents1-3 li {
+    margin: 30px 0px;
+}
+
+ul#contents1-3 li a {
+  margin: 0 auto;
+}
+
+.contents2 {
+    width: 100%;
+    height: 850px;
+    background-position: right;
+    background-position-y: bottom;
+    background-size: 30%;
+    text-align: center;
+}
+
+.f-contents2 {
+    width: 100%;
+    height: 85%;
+    display: block;
+    text-align: center;
+    justify-content: space-around;
+    padding: 0px;
+    text-align: center;
+}
+.contents2-b {
+    text-align: center;
+    padding-top: 60px;
+    width: 95%;
+    margin: 0 auto;
+}
+.text-contents {
+    margin: 0px 50px;
+}
+
+.text-contents li {
+  font-size: 15px;
+}
+
+.instagram {
+    height: 600px;
+    background-position: right 150px bottom 10px;
+    background-repeat: no-repeat;
+    background-size: 30%;
+    background-image: url(images/instagram-photo10.png);
+    position: relative;
+}
+
+.instagram h2 {
+    padding: 50px 20%;
+    text-align: left;
+}
+
+.autoplay {
+    visibility:hidden;
+}
+
+.slick-list {
+    visibility:hidden;
+}
+
+.sp {
+    visibility:visible;
+    display: block;
+    width: 35%;
+    padding: 10px;
+    position: absolute;
+}
+
+.left {
+    display: block;
+    position: absolute;
+    top: 200px;
+    left: 70px; 
+}
+
+.right {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 70px; 
+}
+
+
+footer {
+    width: 100%;
+    height: 150px;
+    background-color: #e5dad4;
+    padding: 50px 0px 20px 0px;
+    text-align: center;
+}
+.sns li a img {
+    width: 50px;
+}
+
+.footer-inner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.footer-inner img {
+    width: 55%;
+}
+
+
+}
+/*ミスしやすいポイント。最後の } を必ず書くこと！*/
+
+
+/*================================================
+Smartphone :  画面の横幅が479pxまで
+=================================================*/
+@media screen and (max-width:479px){
+
+/*=============================*/
+/*メインビジュアル部分*/
+/* ============================*/
+
+.main-image {
+  height: 400px;
+}
+
+#nav-drawer {
+  position: relative;
+  top: 8px;
+  left: 8px;
+}
+
+.navigation li {
+  height: 65px;
+}
+
+.navigation li a {
+  font-size: 22px;
+  line-height: 65px;
+}
+
+.header-inner {
+  position: absolute;
+  top: 3px;
+}
+.logo img {
+  width: 50%;
+}
+
+.concept-wrapper {
+    height: 400px;
+    background-size: 60%;
+}
+
+#concept {
+  height: 250px;
+}
+
+.c-text1 {
+  padding-bottom: 35px;
+}
+
+#concept img {
+  width: 95%;
+}
+
+.c-text2 p {
+  font-size: 9px;
+}
+
+.contents1 img {
+  width: 40%;
+}
+
+#menu {
+  margin: 0 0;
+}
+
+.btn-wrapper {
+  height: 140px;
+}
+
+.btn {
+  margin: 0 auto;
+  margin-top: 30px;
+  height: 50px;
+  font-size: 30px;
+  width: 280px;
+  line-height: 55px;
+
+}
+
+ul#contents1-3 {
+    padding-bottom: 50px;
+}
+
+ul#contents1-3 li a {
+  width: 120px;
+  font-size: 20px;
+}
+
+.instagram {
+  padding: 0 ; 
+  height: 415px;
+  background-position: right 100px bottom 10px;
+}
+
+.instagram h2 {
+  font-size: 16px;
+}
+
+.right {
+    top: -20px;
+}
+
+.left {
+    top: 145px;
+}
+
+footer {
+  height: 100px;
+}
